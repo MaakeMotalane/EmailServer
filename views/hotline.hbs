@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+    box-sizing: border-box;
+    font-family: calibri, sans-serif;
+    color: black;
+  }
+  .tableWrap { max-width: 90vw; width: 500px; display: block; margin: 0 auto; color: black;}
+
+  h4 {
+    text-align: center;
+  }
+
+  th, td {
+    border: 1px solid black;
+    min-height: 20px;
+  }
+
+  td {
+    padding: 10px 5px;
+  }
+
+  table {
+    width: 100%;
+    margin: 0 auto;
+    border-spacing: 0px;
+    border-collapse: collapse;
+  }
+
+  .heading {
+    padding: 10px 5px;
+    text-align: center;
+    background: lightblue;
+  }
+
+  tr td{
+    width: 40%;
+  }
+
+  tr td:first-child {
+    width: 60%;
+  }
+  </style>
+</head>
+  <body>
+
+
+  <div class="tableWrap">
+    <h4>Mobile App Hotline Reporting</h4>
+    <table>
+      <thead>
+        <tr>
+          <th class="heading" colspan="2">Report Details</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>Report Type</td>
+            <td>{{body.reportType}}</td>
+          </tr>
+          <tr>
+            <td>Where did you see the content?</td>
+            <td>{{body.reportContent}}</td>
+          </tr>
+          <tr>
+            <td>Platform</td>
+            <td>
+              {{body.sourceOther}}
+              {{!-- {{#if body.sourceLink}}
+                <a href="{{body.urlP2P}}">{{body.urlP2P}}</a>
+              {{/if}} --}}
+            </td>
+          </tr>
+          <tr>
+            <td>Short Description</td>
+            <td>{{body.desc}}</td>
+          </tr>
+          <tr>
+            <td>Anonymous</td>
+            <td>{{body.anonymous}}</td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <!-- <td></td> -->
+          </tr>
+      </tbody>
+    </table>
+    <!-- Personal Info -->
+    {{#if body.isAnonymous}}
+    <table>
+      <thead>
+        <tr>
+          <th class="heading" colspan="2">Personal Info</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>Name</td>
+            <td>{{body.fname}}</td>
+          </tr>
+          <tr>
+            <td>Surname</td>
+            <td>{{body.surname}}</td>
+          </tr>
+          <tr>
+            <td>Email Address</td>
+            <td>{{body.email}}</td>
+          </tr>
+          <tr>
+            <td>Mobile No.</td>
+            <td>{{body.cell}}</td>
+          </tr>
+          <tr>
+            <td>Gender</td>
+            <td>{{body.gender}}</td>
+          </tr>
+          <tr>
+            <td colspan="2"></td>
+            <!-- <td></td> -->
+          </tr>
+      </tbody>
+    </table>
+    {{/if}}
+    <table>
+      <thead>
+        <tr>
+          <th class="heading" colspan="2">Where the incident took place?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Province</td>
+          <td>{{body.province}}</td>
+        </tr>
+        <tr>
+          <td>Suburb/Town</td>
+          <td>{{body.city}}</td>
+        </tr>
+        <tr>
+          <td>District</td>
+          <td>{{body.district}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </body>
+</html>

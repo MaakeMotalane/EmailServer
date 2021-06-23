@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{!-- <link rel="stylesheet" href="{{{styleSheet}}}"> --}}
+  {{!-- <title>{{title}}</title> --}}
+  <style>
+    * {
+    box-sizing: border-box;
+    font-family: calibri, sans-serif;
+  }
+  .tableWrap { max-width: 90vw; width: 500px; display: block; margin: 0 auto; color: black;}
+
+  h4 {
+    text-align: center;
+  }
+
+  th, td {
+    border: 1px solid black;
+    min-height: 20px;
+  }
+
+  td {
+    padding: 10px 5px;
+  }
+
+  table {
+    width: 100%;
+    margin: 0 auto;
+    border-spacing: 0px;
+    border-collapse: collapse;
+  }
+
+  .heading {
+    padding: 10px 5px;
+    text-align: center;
+    background: lightblue;
+  }
+
+  tr td{
+    width: 40%;
+  }
+
+  tr td:first-child {
+    width: 60%;
+  }
+  </style>
+</head>
+  <body>
+
+
+  <div class="tableWrap">
+    <h4>Event</h4>
+    <p>Event name:{{body.rsvp.eventName}}</p>
+    <p>Event location: {{body.rsvp.eventLocation}}</p>
+    <hr>
+    <h4>RSVP'<small>by</small></h4>
+    <p>Name: <span>{{body.formdata.workTitle}} {{body.formdata.firstname}} {{body.formdata.surname}}</span></p>
+    <p>Work: <span>{{body.formdata.org}}</span></p>
+    <p>Email: <span>{{body.formdata.inputEmail}}</span></p>
+    <p>Phone: <span>{{body.formdata.cell}}</span></p>
+  </div>
+
+  </body>
+</html>
